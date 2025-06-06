@@ -24,7 +24,7 @@ class GraphicsProgram3D:
     def __init__(self):
 
         pygame.init() 
-        pygame.display.set_mode((800,600), pygame.OPENGL|pygame.DOUBLEBUF)
+        pygame.display.set_mode((1280,720), pygame.OPENGL|pygame.DOUBLEBUF)
 
 
         # Used for the skydome, can be used for particle effects as well, works well with textures with alpha textures
@@ -56,9 +56,9 @@ class GraphicsProgram3D:
         self.texture_crack01 = load_texture("/crack1.png")
         self.texture_crack02 = load_texture("/crack2.png")
         self.texture_crack03 = load_texture("/crack3.png")
-        self.texture_amethyst_diffuse = load_texture("/Stars.jpg")
+        self.texture_amethyst_diffuse = load_texture("/Ball.jpg")
         self.texture_amethyst_specular = load_texture("/Sky.png")
-        self.texture_galaxy = load_texture("/galaxy.jpg")
+        self.texture_galaxy = load_texture("/monte2.jpg")
         self.crack_textures = [self.texture_crack01, self.texture_crack02, self.texture_crack03]
 
         self.clock = pygame.time.Clock()
@@ -217,7 +217,7 @@ class GraphicsProgram3D:
 
         glClear(GL_COLOR_BUFFER_BIT)  ### --- YOU CAN ALSO CLEAR ONLY THE COLOR OR ONLY THE DEPTH --- ###
 
-        glViewport(0, 0, 800, 600)
+        glViewport(0, 0, 1280, 720)
 
         glClearColor(1.0, 1.0, 1.0, 1.0)
         
