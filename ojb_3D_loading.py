@@ -70,13 +70,13 @@ def load_obj_file(file_location, file_name):
                 mesh_model.add_vertex(current_object_id, current_position_list[int(tokens[i+2][0])-1], current_normal_list[int(tokens[i+2][2])-1], current_uv_list[int(tokens[i+2][1])-1])
                 mesh_model.add_vertex(current_object_id, current_position_list[int(tokens[i+3][0])-1], current_normal_list[int(tokens[i+3][2])-1], current_uv_list[int(tokens[i+3][1])-1])
     
-    # Aplicar rotación al modelo (90 grados alrededor del eje X)
-    # angle = pi / 2  # 90 grados en radianes
+    # rotation of the model (90 grades around the X angle)
+    # angle = pi / 2  # 90 grades
     # axis = [1, 0, 0]  # Eje X
     # mesh_model.rotate(angle, axis)
 
-    # Aplicar la escala al modelo
-    scale_factor = 1.0  # Cambia este valor según sea necesario
+    # scale the model
+    scale_factor = 1.0  
     mesh_model.scale(scale_factor)
 
     mesh_model.set_opengl_buffers()

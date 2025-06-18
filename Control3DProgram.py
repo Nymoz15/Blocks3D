@@ -56,9 +56,9 @@ class GraphicsProgram3D:
         self.texture_crack01 = load_texture("/crack1.png")
         self.texture_crack02 = load_texture("/crack2.png")
         self.texture_crack03 = load_texture("/crack3.png")
-        self.texture_amethyst_diffuse = load_texture("/Ball.jpg")
+        self.texture_amethyst_diffuse = load_texture("/Stars.jpg")
         self.texture_amethyst_specular = load_texture("/Sky.png")
-        self.texture_galaxy = load_texture("/monte2.jpg")
+        self.texture_galaxy = load_texture("/galaxy.jpg")
         self.crack_textures = [self.texture_crack01, self.texture_crack02, self.texture_crack03]
 
         self.clock = pygame.time.Clock()
