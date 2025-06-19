@@ -26,6 +26,9 @@ class GraphicsProgram3D:
         pygame.init() 
         pygame.display.set_mode((1280,720), pygame.OPENGL|pygame.DOUBLEBUF)
 
+        self.sound = pg.mixer.Sound('sounds/gameplay.mp3')
+        self.sound.play(-1)
+        self.music_paused = False
 
         # Used for the skydome, can be used for particle effects as well, works well with textures with alpha textures
         self.sprite_shader = SpriteShader()
@@ -308,8 +311,22 @@ class GraphicsProgram3D:
                     if event.key == K_p:
                         if self.pause_game:
                             self.pause_game = self.pause_game = False
+                            self.sound.play(-1)  
+                            self.music_paused = False  
+                        else:
+                            self.pause_game = self.pause_game = True
+                            self.sound.stop()  
+                            self.music_paused = True  
+                            time.sleep(0.2)
+                    if event.key == pygame.K_m: 
+                        if self.music_paused:  
+                            self.sound.play(-1)  
+                            self.music_paused = False  
+                        else:  
+                            self.sound.stop()  
+                            self.music_paused = True  
+                            time.sleep(0.2)
                            
-                        
                 elif event.type == pygame.KEYUP:
                     if event.key == K_a:
                         self.A_key_down = False

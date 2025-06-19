@@ -6,8 +6,8 @@ import pygame as pg
 # A basic brick that is hitable, used as a base for game bricks
 class HitBrick(Brick):
     
-    def _init_(self, position, width, height, textures, color, maxHit):
-        super()._init_(position, width, height, color)
+    def __init__(self, position, width, height, textures, color, maxHit):
+        super().__init__(position, width, height, color)
         self.maxHit = maxHit
         self.currentHits = 0
         self.textures = textures
@@ -43,13 +43,13 @@ class HitBrick(Brick):
 # Next 3 classes represent the game bricks, they initialize themselves with the number of hits they can take,
 # else they use the inherited class
 class OneHitBrick(HitBrick):
-    def _init_(self, position, width, height, textures):
-        super()._init_(position, width, height, textures, Color(0.15, 0.85, 0.10), 2)
+    def __init__(self, position, width, height, textures):
+        super().__init__(position, width, height, textures, Color(0.15, 0.85, 0.10), 2)
         
 class TwoHitBrick(HitBrick):
-    def _init_(self, position, width, height, textures):
-        super()._init_(position, width, height, textures, Color(0.80, 0.80, 0.10), 3)
+    def __init__(self, position, width, height, textures):
+        super().__init__(position, width, height, textures, Color(0.80, 0.80, 0.10), 3)
 
 class ThreeHitBrick(HitBrick):
-    def _init_(self, position, width, height, textures):
-        super()._init_(position, width, height, textures, Color(0.85, 0.15, 0.10), 4)
+    def __init__(self, position, width, height, textures):
+        super().__init__(position, width, height, textures, Color(0.85, 0.15, 0.10), 4)
