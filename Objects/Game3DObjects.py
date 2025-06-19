@@ -5,8 +5,8 @@ import pygame as pg
 
 # Typical brick in the game, inherits the cube class
 class Brick(Cube):
-    def _init_(self, position, width, height, color):
-        super()._init_()
+    def __init__(self, position, width, height, color):
+        super().__init__()
         self.pos = position
         self.w = width
         self.h = height
@@ -71,8 +71,8 @@ class Brick(Cube):
         
 # Play game ball
 class Ball(Sphere):
-    def _init_(self, position, size, texture_diffuse, texture_specular):
-        super()._init_(12, 24)
+    def __init__(self, position, size, texture_diffuse, texture_specular):
+        super().__init__(12, 24)
         self.pos = position
         self.size = size
         self.tex_diffuse = texture_diffuse
@@ -121,8 +121,8 @@ class Ball(Sphere):
 
 # Each brick has 4 of these, these handle the collision detection of the ball
 class LineObstacle(Line):
-    def _init_(self, point_1, point_2):
-        Line._init_(self, point_1, point_2)
+    def __init__(self, point_1, point_2):
+        Line.__init__(self, point_1, point_2)
         self.normal_vector = Vector(-(self.point_2.y - self.point_1.y), self.point_2.x - self.point_1.x, 0)
 
     # Static check that checks if the corner of a lineObstacle is inside the ball
@@ -130,7 +130,7 @@ class LineObstacle(Line):
         distX = ball.pos.x - point.x
         distY = ball.pos.y - point.y
     
-        length = sqrt(distX*2 + distY*2 )
+        length = sqrt(distX**2 + distY**2 )
 
         return length < ball.radius
 
@@ -172,7 +172,7 @@ class LineObstacle(Line):
         distX = self.point_1.x - self.point_2.x
         distY = self.point_1.y - self.point_2.y
 
-        length = sqrt(distX*2 + distY*2)
+        length = sqrt(distX**2 + distY**2)
         
         dotproduct = ( ((ball.pos.x - self.point_1.x) * (self.point_2.x - self.point_1.x))
                      + ((ball.pos.y - self.point_1.y) * (self.point_2.y - self.point_1.y)) ) / length**2
@@ -231,7 +231,7 @@ class LineObstacle(Line):
 
 # Represents the platform on the bottom of the game
 class Platform:
-    def _init_(self, position, meshmodel):
+    def __init__(self, position, meshmodel):
         self.container = meshmodel
 
         self.pos = position
@@ -288,8 +288,8 @@ class Platform:
 
 # Represents one wall
 class Wall(Cube):
-    def _init_(self, position, width, height, color):
-        super()._init_()
+    def __init__(self, position, width, height, color):
+        super().__init__()
         self.pos = position
         self.w = width
         self.h = height
@@ -307,7 +307,7 @@ class Wall(Cube):
     
 # Uese walls to draw thte frame, but uses lineObstacle class for collision detection
 class Frame:
-    def _init_(self, platform_position, width, height):
+    def __init__(self, platform_position, width, height):
         self.w = width
         self.h = height
         self.corner_1 = Point(platform_position.x - width / 2, platform_position.y, 0)
@@ -339,3 +339,4 @@ class Frame:
     def display(self, model_matrix, shader):
         for wall in self.walls:
             wall.display(model_matrix, shader)
+        
