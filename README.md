@@ -79,7 +79,7 @@ To download the project, run:
  git clone https://github.com/Nymoz15/Blocks3D.git
  pip install -r requirements.txt
  ```
- Then run menu.py or to play
+ Then run menu.py to play
 
 ## Installer (Windows)
 
@@ -99,19 +99,18 @@ This installer bundles everything needed to play — no Python setup required.
 | Mute audio         | M           |
 
 ## Showcase video
-Link to the video: 
+Link to the video: https://www.youtube.com/watch?v=pBVwkcrplzg
 
-[![Blocks3D](https://img.shields.io/badge/youtube-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://www.youtube.com/watch?v=PRjFw_t8N-g)
 
 ## Documentation:
 #### [Documentation](Documentation/Documentation.pdf)
 
 ## Authors
-- Martínez González Ian Eduardo @Nymoz15
-- Acuña Jirón Génesis Alexandra @WisePapuAlex
+- Martínez González Ian Eduardo [@Nymoz15](https://github.com/Nymoz15)
+- Acuña Jirón Génesis Alexandra [@WisePapuAlex](https://github.com/WisePapuAlex)
 
 ![](Documentation/screenshots/Menu.png)
-![](Documentation/screenshots/How_to_play.png)
+![](Documentation/screenshots/How to play.png)
 ![](Documentation/screenshots/Gameplay.png)
 
 ## License
