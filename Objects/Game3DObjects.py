@@ -322,7 +322,7 @@ class Frame:
 
         self.walls = []
         wallwidth = 0.5
-        wallcolor = Color(1.0, 0.84, 0.0)
+        wallcolor = Color(0.53, 0.53, 0.53)
         self.walls.append(Wall(Point(self.corner_1.x - wallwidth / 2, platform_position.y + height / 2, 0), wallwidth, height, wallcolor))
         self.walls.append(Wall(Point(self.corner_3.x + wallwidth / 2, platform_position.y + height / 2, 0), wallwidth, height, wallcolor))
         self.walls.append(Wall(Point(platform_position.x, self.corner_2.y + wallwidth / 2, 0), width + wallwidth * 2, wallwidth, wallcolor))

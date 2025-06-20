@@ -11,18 +11,19 @@ class Intro():
         self.animationTime += delta_time
         # Do not need currtime - starttime and endtime - startime because for this class 
         # the animation will always start at time 0
-        t = self.animationTime / self.animationEnd
+        t = min(self.animationTime / self.animationEnd, 1.0)
 
-        while(len(pointArray) > 1):
+        tempArray = pointArray[:]  # Avoid modifying the original array
+        while(len(tempArray) > 1):
             tmp = []
-            for i in range(len(pointArray) - 1):
-                tmp.append(self.lerp(pointArray[i+1], pointArray[i + 1], t))
-            pointArray = tmp
+            for i in range(len(tempArray) - 1):
+                tmp.append(self.lerp(tempArray[i], tempArray[i + 1], t))  # Corrected here
+            tempArray = tmp
 
         if self.animationTime >= self.animationEnd:
             self.animationFinished = True
 
-        return pointArray[0]
+        return tempArray[0]
 
     def lerp(self, p1, p2, t):
         return (p1 * (1 - t)) + (p2 * t)

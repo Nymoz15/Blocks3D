@@ -44,12 +44,15 @@ class HitBrick(Brick):
 # else they use the inherited class
 class OneHitBrick(HitBrick):
     def __init__(self, position, width, height, textures):
-        super().__init__(position, width, height, textures, Color(0.15, 0.85, 0.10), 2)
-        
+        # Naranja neón → (1.0, 0.4, 0.0)
+        super().__init__(position, width, height, textures, Color(1.0, 0.4, 0.0), 2)
+
 class TwoHitBrick(HitBrick):
     def __init__(self, position, width, height, textures):
-        super().__init__(position, width, height, textures, Color(0.80, 0.80, 0.10), 3)
+        # Magenta eléctrico → (1.0, 0.0, 1.0)
+        super().__init__(position, width, height, textures, Color(1.0, 0.0, 1.0), 3)
 
 class ThreeHitBrick(HitBrick):
     def __init__(self, position, width, height, textures):
-        super().__init__(position, width, height, textures, Color(0.85, 0.15, 0.10), 4)
+        # Cian neón → (0.0, 1.0, 1.0)
+        super().__init__(position, width, height, textures, Color(0.0, 1.0, 1.0), 4)
