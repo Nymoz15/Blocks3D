@@ -110,7 +110,7 @@ Link to the video: https://www.youtube.com/watch?v=pBVwkcrplzg
 - Acuña Jirón Génesis Alexandra [@WisePapuAlex](https://github.com/WisePapuAlex)
 
 ![](Documentation/screenshots/Menu.png)
-![](Documentation/screenshots/How to play.png)
+![](Documentation/screenshots/HowToPlay.png)
 ![](Documentation/screenshots/Gameplay.png)
 
 ## License
